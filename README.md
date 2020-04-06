@@ -23,3 +23,11 @@ After commiting changes, run:
 ## Running Locally
 
 `heroku local`
+
+## Integrating with React App
+
+After your React app is deployed to Heroku, use its URL in this app's config:
+
+ `heroku config:set REACT_CLIENT_ORIGIN=https://booktonica-react.herokuapp.com`
+
+ This will set proper CORS headers so your React client app can make requests.
