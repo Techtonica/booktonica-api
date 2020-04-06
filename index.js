@@ -43,6 +43,13 @@ api.get('/books', (_unused, res, next) =>
     .catch(next)
 );
 
+api.get('/books/:id', (req, res, next) => {
+  db
+    .getBookById(req.params.id)
+    .then(book => book ? res.send(book) : res.sendStatus(404))
+    .catch(err => next(err));
+});
+
 const PORT = process.env.PORT || 3001;
 
 // sanityCheck will make sure the DB is working before listening

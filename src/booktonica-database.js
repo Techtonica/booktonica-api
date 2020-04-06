@@ -29,6 +29,13 @@ class BooktonicaDatabase {
     return this.db.one('SELECT count(*) FROM books').then(r => r.count);
   }
 
+  getBookById(id) {
+    // id = "1;TRUNCATE BOOKS;"
+    return this.db.oneOrNone(`
+      SELECT * FROM books WHERE id=${id}
+      `);
+  }
+
   getAllBooks() {
     return this.db.any(
       `SELECT
