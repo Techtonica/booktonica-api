@@ -21,6 +21,12 @@ const api = express();
 api.use(morgan('tiny'));
 api.use(bodyParser.json());
 
+api.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", process.env.REACT_CLIENT_ORIGIN); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 /**
  * This will just print the incoming request bodies
  * which is useful for debugging. You can skip it if you want

@@ -1,6 +1,6 @@
 # booktonica-api
 
-The Express API with Postgres database used by the booktonica-react app.
+The Express API with Postgres database used by the [booktonica-react app](https://github.com/Techtonica/booktonica-react).
 
 ## Deployment using Heroku
 
